@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+    --radius: 0.5rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-white text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+      "Droid Sans", "Helvetica Neue", sans-serif;
+  }
+
+  /* Brand Typography from Manual */
+  .brand-title {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+  }
+
+  .brand-body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif;
+    font-weight: 600;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply brand-title;
+  }
+
+  p,
+  span,
+  div {
+    @apply brand-body;
+  }
+}
+
+/* Brand-specific utility classes from manual */
+@layer utilities {
+  .text-bacsa-gradient {
+    background: linear-gradient(135deg, #07ae97 0%, #2f69eb 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-bacsa-gradient {
+    background: linear-gradient(135deg, #07ae97 0%, #2f69eb 100%);
+  }
+
+  .bg-bacsa-dark-gradient {
+    background: linear-gradient(135deg, #16409d 0%, #1d2452 100%);
+  }
+
+  /* Brand Colors from Manual */
+  .text-bacsa-mountain-meadow {
+    color: #07ae97;
+  }
+  .text-bacsa-royal-blue {
+    color: #16409d;
+  }
+  .text-bacsa-botticelli {
+    color: #2f69eb;
+  }
+  .text-bacsa-cloud-burst {
+    color: #1d2452;
+  }
+
+  .bg-bacsa-mountain-meadow {
+    background-color: #07ae97;
+  }
+  .bg-bacsa-royal-blue {
+    background-color: #16409d;
+  }
+  .bg-bacsa-botticelli {
+    background-color: #2f69eb;
+  }
+  .bg-bacsa-cloud-burst {
+    background-color: #1d2452;
+  }
+
+  .border-bacsa-mountain-meadow {
+    border-color: #07ae97;
+  }
+  .border-bacsa-royal-blue {
+    border-color: #16409d;
+  }
+  .border-bacsa-botticelli {
+    border-color: #2f69eb;
+  }
+  .border-bacsa-cloud-burst {
+    border-color: #1d2452;
+  }
+
+  /* Custom animations for logo prominence */
+  .animate-pulse-subtle {
+    animation: pulse-subtle 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse-subtle {
+    0%,
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% {
+      opacity: 0.95;
+      transform: scale(1.02);
+    }
+  }
+
+  /* Fast Font Style Cycling */
+  .font-cycle-fast {
+    transition: font-family 0.3s cubic-bezier(0.4, 0, 0.2, 1), font-weight 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform
+      0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Seamless animation keyframes */
+  @keyframes font-morph-seamless {
+    0% {
+      transform: scale(1) rotateX(0deg);
+      opacity: 1;
+    }
+    25% {
+      transform: scale(1.01) rotateX(5deg);
+      opacity: 0.95;
+    }
+    50% {
+      transform: scale(1.02) rotateX(0deg);
+      opacity: 1;
+    }
+    75% {
+      transform: scale(1.01) rotateX(-5deg);
+      opacity: 0.95;
+    }
+    100% {
+      transform: scale(1) rotateX(0deg);
+      opacity: 1;
+    }
+  }
+
+  .animate-font-morph {
+    animation: font-morph-seamless 0.8s ease-in-out infinite;
+  }
+
+  /* Accessibility: Respect reduced motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    .animate-pulse-subtle,
+    .animate-gap-seamless,
+    .animate-font-morph,
+    .font-cycle-fast {
+      animation: none;
+      transition: none;
+    }
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-bacsa-mountain-meadow rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-bacsa-royal-blue;
+}
+
+/* Selection colors */
+::selection {
+  @apply bg-bacsa-mountain-meadow text-white;
+}
