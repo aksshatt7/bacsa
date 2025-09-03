@@ -40,6 +40,7 @@ export default function About() {
       year: "4th Year",
       bio: "As Co-President and Co-Founder of BACSA, I am committed to building an interdisciplinary community that bridges academics and industry. Through our Research Project, Hackathon, and workshops, we create opportunities for collaboration and hands-on experience. Get involved!",
       photo: "/images/astrid-chavez-photo.jpg",
+      isPresident: true,
     },
     {
       id: "co-president-2",
@@ -49,6 +50,7 @@ export default function About() {
       year: "4th Year",
       bio: "Passionate about fostering interdisciplinary collaboration and creating opportunities for students in biotech and CS.",
       photo: "/images/nathan-padua-photo.jpg",
+      isPresident: true,
     },
   ]
 
@@ -61,6 +63,7 @@ export default function About() {
       year: "3rd Year",
       bio: "I am on a journey trying to figure out what I want to do with a STEM degree, and I realized now that there are so many options outside just medical school and research. I wanted to share these ideas with people who are still deciding on what to do after their undergrad.",
       photo: "/images/allisha-saini-photo.jpg",
+      isPresident: false,
     },
     {
       id: "vpcs",
@@ -70,6 +73,7 @@ export default function About() {
       year: "3rd Year",
       bio: "Organizing engaging workshops, panels, and networking events to connect students with industry professionals.",
       photo: "/images/aksshatt-bariar-photo.png",
+      isPresident: false,
     },
     {
       id: "vpfin",
@@ -79,6 +83,7 @@ export default function About() {
       year: "Graduate",
       bio: "My name is Camila, I graduated in International Business and I currently work at TD Bank. I joined BACSA because I admire its innovative way of combining biotechnology and computer science, and I want to contribute my financial skills to support the club's growth!",
       photo: "/images/camila-galarza-photo.jpg",
+      isPresident: false,
     },
   ]
 
@@ -90,6 +95,7 @@ export default function About() {
       program: "Neuroscience Specialist",
       year: "4th Year",
       bio: "Hey everyone! My name is George and I'm a 4th year student at UTSC in the Specialist in Neuroscience program! This is my first year working with BACSA, and I'm excited to get involved with all the events planned for this year!",
+      isPresident: false,
     },
     {
       id: "vpmark",
@@ -99,6 +105,7 @@ export default function About() {
       year: "4th Year",
       bio: "As a Neuroscience, Human Biology, and Psychology student, I am passionate about interdisciplinary learning. Through BACSA, I aim to foster a supportive space for students to explore biotech and computer science, connect across campuses, and grow together.",
       photo: "/images/camila-bolio-photo.jpg",
+      isPresident: false,
     },
     {
       id: "vprsch",
@@ -108,47 +115,48 @@ export default function About() {
       year: "3rd Year",
       bio: "As VP of Research, I will lead the 2025_26 BACSA Research Project, creating opportunities that unite computer science and life science students at UofT. My focus is on academic rigor, mentorship, and collaboration while fostering a supportive community of student researchers.",
       photo: "/images/jean-jung-photo.jpg",
+      isPresident: false,
     },
   ]
 
   const TeamMemberCard = ({ member }: { member: any }) => {
     return (
-      <div className="flip-card-container relative w-full h-80 perspective-1000">
-        <div className="flip-card w-full h-full relative transition-transform duration-700 transform-style-preserve-3d">
-          {/* Front Side - Basic Info */}
-          <div className="flip-card-front absolute inset-0 w-full h-full backface-hidden bg-white rounded-lg shadow-md border border-gray-100 overflow-hidden">
-            <div className="h-full flex flex-col items-center justify-center p-6 text-center">
-              {member.photo ? (
-                <div className="w-24 h-24 rounded-full overflow-hidden mb-4 border-4 border-gradient-to-r from-blue-500 to-teal-400">
-                  <img
-                    src={member.photo || "/placeholder.svg"}
-                    alt={`${member.name} - ${member.role}`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              ) : (
-                <div className="w-24 h-24 bg-gradient-to-r from-blue-500 to-teal-400 rounded-full flex items-center justify-center mb-4">
-                  <span className="text-white font-bold text-2xl">
-                    {member.name
-                      .split(" ")
-                      .map((n: string) => n[0])
-                      .join("")}
-                  </span>
-                </div>
-              )}
-              <h3 className="text-xl font-semibold text-gray-900 mb-1">{member.name}</h3>
-              <p className="text-blue-600 font-medium mb-2">{member.role}</p>
-              <p className="text-sm text-gray-600 mb-1">{member.program}</p>
-              <p className="text-sm text-gray-500">{member.year}</p>
+      <div className="group relative w-full h-80 bg-white rounded-lg shadow-md border border-gray-100 overflow-hidden hover:shadow-lg transition-all duration-300">
+        {/* Front Side - Always Visible */}
+        <div className="absolute inset-0 w-full h-full p-6 flex flex-col items-center justify-center text-center transition-opacity duration-300 group-hover:opacity-0">
+          {member.photo ? (
+            <div className="w-24 h-24 rounded-full overflow-hidden mb-4 border-4 border-gradient-to-r from-blue-500 to-teal-400">
+              <img
+                src={member.photo || "/placeholder.svg"}
+                alt={`${member.name} - ${member.role}`}
+                className="w-full h-full object-cover"
+              />
             </div>
-          </div>
+          ) : (
+            <div className="w-24 h-24 bg-gradient-to-r from-blue-500 to-teal-400 rounded-full flex items-center justify-center mb-4">
+              <span className="text-white font-bold text-2xl">
+                {member.name
+                  .split(" ")
+                  .map((n: string) => n[0])
+                  .join("")}
+              </span>
+            </div>
+          )}
+          <h3 className="text-xl font-semibold text-gray-900 mb-1">{member.name}</h3>
+          <p className="text-blue-600 font-medium mb-2">{member.role}</p>
+          <p className="text-sm text-gray-600 mb-1">{member.program}</p>
+          <p className="text-sm text-gray-500">{member.year}</p>
+        </div>
 
-          {/* Back Side - Bio Only */}
-          <div className="flip-card-back absolute inset-0 w-full h-full backface-hidden rotate-y-180 bg-gradient-to-br from-bacsa-mountain-meadow to-bacsa-botticelli rounded-lg shadow-md overflow-hidden">
-            <div className="h-full flex items-center justify-center p-8 text-center text-white">
-              <p className="text-lg leading-relaxed drop-shadow-sm">{member.bio}</p>
-            </div>
-          </div>
+        {/* Back Side - Bio Only - Shows on Hover with Brand Colors */}
+        <div
+          className={`absolute inset-0 w-full h-full p-8 flex items-center justify-center text-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
+            member.isPresident
+              ? "bg-bacsa-mountain-meadow" // Light green for presidents
+              : "bg-bacsa-cloud-burst" // Dark blue for other executives
+          }`}
+        >
+          <p className="text-lg leading-relaxed drop-shadow-sm font-medium">{member.bio}</p>
         </div>
       </div>
     )
@@ -252,82 +260,6 @@ export default function About() {
           </div>
         </div>
       </section>
-
-      <style jsx>{`
-        .perspective-1000 {
-          perspective: 1000px;
-        }
-        
-        .transform-style-preserve-3d {
-          transform-style: preserve-3d;
-        }
-        
-        .backface-hidden {
-          backface-visibility: hidden;
-        }
-        
-        .rotate-y-180 {
-          transform: rotateY(180deg);
-        }
-        
-        .flip-card {
-          cursor: pointer;
-        }
-        
-        .flip-card-front {
-          z-index: 2;
-        }
-        
-        .flip-card-back {
-          z-index: 1;
-        }
-        
-        /* Smooth hover transition */
-        .flip-card-container:hover .flip-card {
-          transform: rotateY(180deg);
-        }
-        
-        /* Enhanced shadow on hover */
-        .flip-card-container:hover {
-          filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15));
-        }
-        
-        /* Accessibility: Respect reduced motion preferences */
-        @media (prefers-reduced-motion: reduce) {
-          .flip-card {
-            transition: none;
-          }
-          .flip-card-container:hover .flip-card {
-            transform: none;
-          }
-          /* Show both sides stacked for reduced motion users */
-          .flip-card-back {
-            position: relative;
-            transform: none;
-            margin-top: 1rem;
-          }
-        }
-        
-        /* Mobile optimization */
-        @media (max-width: 768px) {
-          .flip-card-container {
-            height: 20rem;
-          }
-          
-          .flip-card-front .p-6,
-          .flip-card-back .p-8 {
-            padding: 1.5rem;
-          }
-          
-          .flip-card-front h3 {
-            font-size: 1.125rem;
-          }
-          
-          .flip-card-back p {
-            font-size: 1rem;
-          }
-        }
-      `}</style>
     </div>
   )
 }
