@@ -6,7 +6,7 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
-import { Mail, MapPin, Send, Instagram } from "lucide-react"
+import { Mail, MapPin, Send, Instagram, CheckCircle, AlertCircle } from "lucide-react"
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -15,13 +15,34 @@ export default function Contact() {
     subject: "",
     message: "",
   })
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle")
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log("Form submitted:", formData)
-    // Reset form
-    setFormData({ name: "", email: "", subject: "", message: "" })
+    setIsSubmitting(true)
+    setSubmitStatus("idle")
+
+    try {
+      // Create mailto URL directly
+      const mailtoUrl = `mailto:bacsa.uoft@gmail.com?subject=${encodeURIComponent(
+        `[BACSA Website] ${formData.subject}`,
+      )}&body=${encodeURIComponent(
+        `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}\n\n---\nSent from BACSA website contact form`,
+      )}`
+
+      // Open the user's default email client
+      window.location.href = mailtoUrl
+
+      // Show success message
+      setSubmitStatus("success")
+      setFormData({ name: "", email: "", subject: "", message: "" })
+    } catch (error) {
+      console.error("Error creating email:", error)
+      setSubmitStatus("error")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -52,6 +73,28 @@ export default function Contact() {
             {/* Contact Form */}
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-8">Send us a message</h2>
+
+              {/* Success Message */}
+              {submitStatus === "success" && (
+                <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg flex items-center">
+                  <CheckCircle className="h-5 w-5 text-green-600 mr-3" />
+                  <p className="text-green-800">
+                    Your email client should have opened with your message. If not, please email us directly at
+                    bacsa.uoft@gmail.com
+                  </p>
+                </div>
+              )}
+
+              {/* Error Message */}
+              {submitStatus === "error" && (
+                <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg flex items-center">
+                  <AlertCircle className="h-5 w-5 text-red-600 mr-3" />
+                  <p className="text-red-800">
+                    Sorry, there was an error. Please email us directly at bacsa.uoft@gmail.com
+                  </p>
+                </div>
+              )}
+
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
@@ -66,6 +109,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       className="w-full"
+                      disabled={isSubmitting}
                     />
                   </div>
                   <div>
@@ -80,6 +124,7 @@ export default function Contact() {
                       onChange={handleChange}
                       required
                       className="w-full"
+                      disabled={isSubmitting}
                     />
                   </div>
                 </div>
@@ -95,6 +140,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     className="w-full"
+                    disabled={isSubmitting}
                   />
                 </div>
                 <div>
@@ -109,13 +155,35 @@ export default function Contact() {
                     required
                     rows={6}
                     className="w-full"
+                    disabled={isSubmitting}
                   />
                 </div>
-                <Button type="submit" size="lg" className="w-full bg-blue-600 hover:bg-blue-700 text-white">
-                  <Send className="mr-2 h-5 w-5" />
-                  Send Message
+                <Button
+                  type="submit"
+                  size="lg"
+                  className="w-full bg-blue-600 hover:bg-blue-700 text-white disabled:opacity-50 disabled:cursor-not-allowed"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                      Opening Email Client...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="mr-2 h-5 w-5" />
+                      Send Message
+                    </>
+                  )}
                 </Button>
               </form>
+
+              <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                <p className="text-blue-800 text-sm">
+                  <strong>Note:</strong> Clicking "Send Message" will open your default email client with your message
+                  pre-filled. You can then send it directly to bacsa.uoft@gmail.com
+                </p>
+              </div>
             </div>
 
             {/* Contact Information */}
@@ -128,7 +196,12 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-gray-900 mb-1">Email</h3>
-                    <p className="text-gray-600">bacsa.uoft@gmail.com</p>
+                    <a
+                      href="mailto:bacsa.uoft@gmail.com"
+                      className="text-gray-600 hover:text-bacsa-mountain-meadow transition-colors duration-200"
+                    >
+                      bacsa.uoft@gmail.com
+                    </a>
                   </div>
                 </div>
 
