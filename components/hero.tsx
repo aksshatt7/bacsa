@@ -179,23 +179,14 @@ export function Hero() {
               <img
                 src="/images/bacsa-logo-hero-right.png"
                 alt="BACSA - Biotechnology And Computer Science Association"
-                className="h-64 md:h-80 lg:h-96 xl:h-[28rem] 2xl:h-[32rem] w-auto object-contain 
-                         drop-shadow-2xl filter brightness-110 contrast-110 
-                         transform hover:scale-105 transition-all duration-500 ease-out
-                         animate-pulse-subtle"
+                className="h-64 md:h-80 lg:h-96 xl:h-[28rem] 2xl:h-[32rem] w-auto object-contain drop-shadow-2xl filter brightness-110 contrast-110 transform hover:scale-105 transition-all duration-500 ease-out animate-pulse-subtle"
               />
 
               {/* Glowing background effect */}
-              <div
-                className="absolute inset-0 bg-gradient-to-r from-bacsa-mountain-meadow/20 to-bacsa-botticelli/20 
-                            rounded-3xl blur-3xl scale-110 -z-10 opacity-60 animate-pulse"
-              ></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-bacsa-mountain-meadow/20 to-bacsa-botticelli/20 rounded-3xl blur-3xl scale-110 -z-10 opacity-60 animate-pulse"></div>
 
               {/* Additional glow ring */}
-              <div
-                className="absolute inset-0 bg-gradient-to-r from-bacsa-mountain-meadow/10 to-bacsa-botticelli/10 
-                            rounded-full blur-2xl scale-125 -z-20 opacity-40"
-              ></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-bacsa-mountain-meadow/10 to-bacsa-botticelli/10 rounded-full blur-2xl scale-125 -z-20 opacity-40"></div>
             </div>
           </div>
         </div>
