@@ -38,7 +38,7 @@ export default function About() {
       role: "Co-President",
       program: "Computer Science & Biology",
       year: "4th Year",
-      bio: "As Co-President and Co-Founder of BACSA, I am committed to building an interdisciplinary community that bridges academics and industry. Through our Research Project, Hackathon, and workshops, we create opportunities for collaboration and hands-on experience. Get involved!",
+      bio: "Co-Founder of BACSA committed to building an interdisciplinary community that bridges academics and industry through research projects, hackathons, and workshops.",
       photo: "/images/astrid-chavez-photo.jpg",
       isPresident: true,
     },
@@ -61,7 +61,7 @@ export default function About() {
       role: "VP Biotechnology",
       program: "Environmental Science",
       year: "3rd Year",
-      bio: "I am on a journey trying to figure out what I want to do with a STEM degree, and I realized now that there are so many options outside just medical school and research. I wanted to share these ideas with people who are still deciding on what to do after their undergrad.",
+      bio: "Exploring diverse STEM career paths beyond medical school and research to help students discover opportunities after their undergrad.",
       photo: "/images/allisha-saini-photo.jpg",
       isPresident: false,
     },
@@ -81,7 +81,7 @@ export default function About() {
       role: "VP Finance",
       program: "International Business",
       year: "Graduate",
-      bio: "My name is Camila, I graduated in International Business and I currently work at TD Bank. I joined BACSA because I admire its innovative way of combining biotechnology and computer science, and I want to contribute my financial skills to support the club's growth!",
+      bio: "International Business graduate working at TD Bank, contributing financial expertise to support BACSA's innovative growth and development.",
       photo: "/images/camila-galarza-photo.jpg",
       isPresident: false,
     },
@@ -94,7 +94,7 @@ export default function About() {
       role: "VP Internal Affairs",
       program: "Neuroscience Specialist",
       year: "4th Year",
-      bio: "Hey everyone! My name is George and I'm a 4th year student at UTSC in the Specialist in Neuroscience program! This is my first year working with BACSA, and I'm excited to get involved with all the events planned for this year!",
+      bio: "4th year Neuroscience student at UTSC excited to get involved with all the events planned for this year at BACSA.",
       isPresident: false,
     },
     {
@@ -103,7 +103,7 @@ export default function About() {
       role: "VP Marketing",
       program: "Neuroscience, Human Biology, & Psychology",
       year: "4th Year",
-      bio: "As a Neuroscience, Human Biology, and Psychology student, I am passionate about interdisciplinary learning. Through BACSA, I aim to foster a supportive space for students to explore biotech and computer science, connect across campuses, and grow together.",
+      bio: "Passionate about interdisciplinary learning, fostering a supportive space for students to explore biotech and computer science across campuses.",
       photo: "/images/camila-bolio-photo.jpg",
       isPresident: false,
     },
@@ -113,7 +113,7 @@ export default function About() {
       role: "VP Research",
       program: "Bioinformatics & Computer Science & Immunology",
       year: "3rd Year",
-      bio: "As VP of Research, I will lead the 2025_26 BACSA Research Project, creating opportunities that unite computer science and life science students at UofT. My focus is on academic rigor, mentorship, and collaboration while fostering a supportive community of student researchers.",
+      bio: "Leading the 2025-26 BACSA Research Project, creating opportunities that unite computer science and life science students through academic rigor and collaboration.",
       photo: "/images/jean-jung-photo.jpg",
       isPresident: false,
     },
@@ -150,13 +150,13 @@ export default function About() {
 
         {/* Back Side - Bio Only - Shows on Hover with Brand Colors */}
         <div
-          className={`absolute inset-0 w-full h-full p-8 flex items-center justify-center text-center text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
+          className={`absolute inset-0 w-full h-full p-8 flex items-center justify-center text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${
             member.isPresident
               ? "bg-bacsa-mountain-meadow" // Light green for presidents
               : "bg-bacsa-cloud-burst" // Dark blue for other executives
           }`}
         >
-          <p className="text-lg leading-relaxed drop-shadow-sm font-medium">{member.bio}</p>
+          <p className="text-lg leading-relaxed drop-shadow-sm font-medium text-white">{member.bio}</p>
         </div>
       </div>
     )
