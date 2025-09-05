@@ -59,40 +59,54 @@ export function UpcomingEvents() {
             <div
               key={index}
               className="bg-white rounded-2xl shadow-lg border border-gray-100 overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+              style={{ height: "520px" }}
             >
-              <div className="p-8">
-                <div className="flex items-center justify-between mb-6">
+              <div className="p-8 h-full flex flex-col">
+                {/* Event Type Badge - Fixed Height */}
+                <div className="flex items-center justify-between mb-6" style={{ height: "32px" }}>
                   <span className={`px-4 py-2 text-sm font-montserrat font-bold rounded-full border ${event.color}`}>
                     {event.type}
                   </span>
                 </div>
 
-                <h3 className="brand-title text-xl text-bacsa-cloud-burst mb-4">{event.title}</h3>
+                {/* Event Title - Fixed Height */}
+                <div className="mb-4" style={{ height: "56px" }}>
+                  <h3 className="brand-title text-xl text-bacsa-cloud-burst leading-tight line-clamp-2">
+                    {event.title}
+                  </h3>
+                </div>
 
-                <p className="brand-body text-gray-600 mb-6 leading-relaxed">{event.description}</p>
+                {/* Event Description - Fixed Height */}
+                <div className="mb-6" style={{ height: "120px" }}>
+                  <p className="brand-body text-gray-600 leading-relaxed text-sm line-clamp-5">{event.description}</p>
+                </div>
 
-                <div className="space-y-3 text-sm text-gray-500 mb-8">
+                {/* Event Details - Fixed Height */}
+                <div className="space-y-3 text-sm text-gray-500 mb-8" style={{ height: "96px" }}>
                   <div className="flex items-center font-montserrat">
-                    <Calendar className="h-4 w-4 mr-3 text-bacsa-mountain-meadow" />
-                    {event.date}
+                    <Calendar className="h-4 w-4 mr-3 text-bacsa-mountain-meadow flex-shrink-0" />
+                    <span className="truncate">{event.date}</span>
                   </div>
                   <div className="flex items-center font-montserrat">
-                    <Clock className="h-4 w-4 mr-3 text-bacsa-botticelli" />
-                    {event.time}
+                    <Clock className="h-4 w-4 mr-3 text-bacsa-botticelli flex-shrink-0" />
+                    <span className="truncate">{event.time}</span>
                   </div>
                   <div className="flex items-center font-montserrat">
-                    <MapPin className="h-4 w-4 mr-3 text-bacsa-royal-blue" />
-                    {event.location}
+                    <MapPin className="h-4 w-4 mr-3 text-bacsa-royal-blue flex-shrink-0" />
+                    <span className="truncate">{event.location}</span>
                   </div>
                   <div className="flex items-center font-montserrat">
-                    <Users className="h-4 w-4 mr-3 text-bacsa-mountain-meadow" />
-                    {event.capacity}
+                    <Users className="h-4 w-4 mr-3 text-bacsa-mountain-meadow flex-shrink-0" />
+                    <span className="truncate">{event.capacity}</span>
                   </div>
                 </div>
 
-                <Button className="w-full bg-bacsa-gradient hover:opacity-90 text-white font-montserrat font-semibold rounded-lg">
-                  Register Now
-                </Button>
+                {/* Register Button - Always at Bottom */}
+                <div className="mt-auto">
+                  <Button className="w-full bg-bacsa-gradient hover:opacity-90 text-white font-montserrat font-semibold rounded-lg h-12">
+                    Register Now
+                  </Button>
+                </div>
               </div>
             </div>
           ))}
