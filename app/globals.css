@@ -183,6 +183,141 @@
       transition: none;
     }
   }
+
+  /* Hero Stick Figure Animations */
+  .stick-figure {
+    position: absolute;
+    z-index: 10;
+  }
+
+  .animate-stick-journey {
+    animation: stick-journey 4s ease-in-out forwards;
+  }
+
+  @keyframes stick-journey {
+    /* Running phase - consistent steps across "Bridge The" */
+    0% {
+      transform: translateX(-20px) translateY(0px);
+      opacity: 1;
+    }
+    10% {
+      transform: translateX(20px) translateY(-8px);
+      opacity: 1;
+    }
+    20% {
+      transform: translateX(60px) translateY(0px);
+      opacity: 1;
+    }
+    30% {
+      transform: translateX(100px) translateY(-8px);
+      opacity: 1;
+    }
+    40% {
+      transform: translateX(140px) translateY(0px);
+      opacity: 1;
+    }
+    50% {
+      transform: translateX(180px) translateY(-8px);
+      opacity: 1;
+    }
+    /* End of "The" - prepare for giant leap */
+    55% {
+      transform: translateX(200px) translateY(0px);
+      opacity: 1;
+    }
+    /* ONE GIANT LEAP to GAP */
+    75% {
+      transform: translateX(400px) translateY(-60px);
+      opacity: 1;
+    }
+    90% {
+      transform: translateX(520px) translateY(-25px);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(540px) translateY(-20px);
+      opacity: 0;
+    }
+  }
+
+  /* Individual leg animations - perfectly synchronized */
+  .leg-left {
+    animation: left-leg-sync 0.8s ease-in-out infinite;
+    transform-origin: 16px 28px;
+  }
+
+  .leg-right {
+    animation: right-leg-sync 0.8s ease-in-out infinite;
+    transform-origin: 16px 28px;
+  }
+
+  @keyframes left-leg-sync {
+    0% {
+      transform: rotate(-12deg);
+    }
+    50% {
+      transform: rotate(12deg);
+    }
+    100% {
+      transform: rotate(-12deg);
+    }
+  }
+
+  @keyframes right-leg-sync {
+    0% {
+      transform: rotate(12deg);
+    }
+    50% {
+      transform: rotate(-12deg);
+    }
+    100% {
+      transform: rotate(12deg);
+    }
+  }
+
+  /* Individual arm animations - synchronized with OPPOSITE legs */
+  .arm-left {
+    animation: left-arm-sync 0.8s ease-in-out infinite;
+    transform-origin: 16px 18px;
+  }
+
+  .arm-right {
+    animation: right-arm-sync 0.8s ease-in-out infinite;
+    transform-origin: 16px 18px;
+  }
+
+  /* Left arm moves with RIGHT leg (natural running motion) */
+  @keyframes left-arm-sync {
+    0% {
+      transform: rotate(15deg);
+    }
+    50% {
+      transform: rotate(-15deg);
+    }
+    100% {
+      transform: rotate(15deg);
+    }
+  }
+
+  /* Right arm moves with LEFT leg (natural running motion) */
+  @keyframes right-arm-sync {
+    0% {
+      transform: rotate(-15deg);
+    }
+    50% {
+      transform: rotate(15deg);
+    }
+    100% {
+      transform: rotate(-15deg);
+    }
+  }
+
+  /* Hide on very small screens to avoid clutter */
+  @media (max-width: 480px) {
+    .stick-figure {
+      display: none;
+    }
+  }
 }
 
 /* Custom scrollbar */
