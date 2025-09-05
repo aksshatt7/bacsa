@@ -95,6 +95,7 @@ export default function About() {
       program: "Neuroscience Specialist",
       year: "4th Year",
       bio: "4th year Neuroscience student at UTSC excited to get involved with all the events planned for this year at BACSA.",
+      photo: "/images/george-alexopoulos-photo.jpg",
       isPresident: false,
     },
     {
