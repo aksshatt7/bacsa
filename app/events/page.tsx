@@ -71,27 +71,6 @@ export default function Events() {
     },
   ]
 
-  const pastEvents = [
-    {
-      title: "Machine Learning in Drug Discovery",
-      date: "February 20, 2024",
-      description: "Explored how ML algorithms are revolutionizing pharmaceutical research.",
-      attendees: 45,
-    },
-    {
-      title: "Genomics Data Analysis Workshop",
-      date: "February 10, 2024",
-      description: "Hands-on session with real genomic datasets and analysis tools.",
-      attendees: 32,
-    },
-    {
-      title: "Career Fair: Biotech & CS",
-      date: "January 25, 2024",
-      description: "Connected students with leading companies in biotechnology and computer science.",
-      attendees: 120,
-    },
-  ]
-
   return (
     <div className="pt-16 bg-white">
       {/* Hero Section */}
@@ -116,61 +95,41 @@ export default function Events() {
             {upcomingEvents.map((event, index) => (
               <div
                 key={index}
-                className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow duration-300"
+                className="bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow duration-300 flex flex-col h-[520px]"
               >
-                <div className="p-6">
+                <div className="p-6 flex flex-col flex-1">
                   <div className="flex items-center justify-between mb-4">
                     <span className={`px-3 py-1 text-sm font-medium rounded-full ${event.color}`}>{event.type}</span>
                   </div>
 
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">{event.title}</h3>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3 min-h-[3.5rem] flex items-center">
+                    {event.title}
+                  </h3>
 
-                  <p className="text-gray-600 mb-4 leading-relaxed">{event.description}</p>
+                  <p className="text-gray-600 mb-4 leading-relaxed flex-1 min-h-[6rem]">{event.description}</p>
 
                   <div className="space-y-2 text-sm text-gray-500 mb-6">
                     <div className="flex items-center">
-                      <Calendar className="h-4 w-4 mr-2" />
-                      {event.date}
+                      <Calendar className="h-4 w-4 mr-2 flex-shrink-0" />
+                      <span className="truncate">{event.date}</span>
                     </div>
                     <div className="flex items-center">
-                      <Clock className="h-4 w-4 mr-2" />
-                      {event.time}
+                      <Clock className="h-4 w-4 mr-2 flex-shrink-0" />
+                      <span className="truncate">{event.time}</span>
                     </div>
                     <div className="flex items-center">
-                      <MapPin className="h-4 w-4 mr-2" />
-                      {event.location}
+                      <MapPin className="h-4 w-4 mr-2 flex-shrink-0" />
+                      <span className="truncate">{event.location}</span>
                     </div>
                     <div className="flex items-center">
-                      <Users className="h-4 w-4 mr-2" />
-                      {event.capacity}
+                      <Users className="h-4 w-4 mr-2 flex-shrink-0" />
+                      <span className="truncate">{event.capacity}</span>
                     </div>
                   </div>
 
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">Register Now</Button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Past Events */}
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12 text-center">Past Events</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {pastEvents.map((event, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300"
-              >
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">{event.title}</h3>
-                <p className="text-blue-600 font-medium mb-3">{event.date}</p>
-                <p className="text-gray-600 mb-4 leading-relaxed">{event.description}</p>
-                <div className="flex items-center text-sm text-gray-500">
-                  <Users className="h-4 w-4 mr-2" />
-                  {event.attendees} attendees
+                  <div className="mt-auto">
+                    <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">Register Now</Button>
+                  </div>
                 </div>
               </div>
             ))}
