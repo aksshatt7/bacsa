@@ -77,6 +77,14 @@ export function Footer() {
               </li>
               <li>
                 <Link
+                  href="/magazine"
+                  className="brand-body text-gray-300 hover:text-bacsa-mountain-meadow transition-colors"
+                >
+                  MAGAZINE
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/contact"
                   className="brand-body text-gray-300 hover:text-bacsa-mountain-meadow transition-colors"
                 >
