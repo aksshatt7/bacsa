@@ -5,7 +5,7 @@ const editions: MagazineEdition[] = [
   {
     title: "Omnibus",
     description:
-      "(description here)",
+      "BACSA Research Projects 2024-2025",
     coverSrc: "/magazine-covers/omnibusbacsa.png",
     pdfHref: "/magazines/omnibus.pdf",
   },
