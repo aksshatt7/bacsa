@@ -21,7 +21,7 @@ export default function MagazinePage() {
             Magazine
           </h1>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Welcome to our BACSA magazines that showcases our magazine editions, featuring curated stories and projects from our biotechnology community! </p>
+            Explore BACSAs magazine editions, featuring selected papers from the BACSA Research Project. These issues highlight student-driven research, innovation, and interdisciplinary work across biotechnology and computer science ! </p>
         </div>
       </section>
 
