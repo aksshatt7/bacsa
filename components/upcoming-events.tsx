@@ -6,36 +6,58 @@ import { Calendar, MapPin, Clock, ArrowRight, Users } from "lucide-react"
 export function UpcomingEvents() {
   const events = [
     {
-      title: "Guest Speaker Workshop",
-      date: "September 30, 2025",
-      time: "5:00 PM - 7:00 PM",
+      title: "Social",
+      date: "Wednesday, January 28, 2026",
+      time: "TBD",
       location: "TBD",
       description:
-        "Guest Lecture + Networking event. Helps students think about different pathways they can take in biotech field with personal journey insights and career advice.",
-      type: "Guest Speaker",
+        "Kick off the semester with BACSA! Join us for a casual social event to meet fellow students interested in biotechnology and applied sciences. Network, connect, and learn about upcoming opportunities.",
+      type: "Social",
       capacity: "Open to all students",
       color: "bg-bacsa-mountain-meadow/10 text-bacsa-mountain-meadow border-bacsa-mountain-meadow/20",
     },
     {
+      title: "CS Workshop (Online)",
+      date: "February 9-13, 2026",
+      time: "TBD",
+      location: "Online",
+      description:
+        "A virtual workshop introducing computational tools and programming concepts essential for biotechnology. Learn foundational skills in data analysis and coding applications for the life sciences.",
+      type: "Workshop",
+      capacity: "Open to all students",
+      color: "bg-bacsa-royal-blue/10 text-bacsa-royal-blue border-bacsa-royal-blue/20",
+    },
+    {
       title: "Biotech Workshop",
-      date: "October 4, 2025",
-      time: "5:00 PM - 7:00 PM",
+      date: "Monday, February 23, 2026",
+      time: "TBD",
       location: "TBD",
       description:
-        "Interactive biotech workshop featuring case studies, current trends like CRISPR and AI in genomics, with hands-on activities and networking opportunities.",
+        "Dive into current biotechnology trends and innovations. This interactive workshop covers emerging topics like CRISPR, AI in genomics, and hands-on activities to explore real-world applications.",
       type: "Workshop",
       capacity: "Open to all students",
       color: "bg-bacsa-botticelli/10 text-bacsa-botticelli border-bacsa-botticelli/20",
     },
     {
-      title: "Bioinformatics with Python",
-      date: "October 15, 2025",
-      time: "5:00 PM - 7:00 PM",
+      title: "Hackathon",
+      date: "Saturday, March 7, 2026",
+      time: "TBD",
       location: "TBD",
       description:
-        "Introduce participants to bioinformatics programming using Python, covering Biopython, parsing DNA/RNA/protein data, and handling FASTA files.",
-      type: "Coding Workshop",
-      capacity: "25-40 students",
+        "Collaborate with peers to solve real-world biotechnology challenges in this exciting hackathon. Form teams, brainstorm innovative solutions, and compete for prizes while building valuable skills.",
+      type: "Hackathon",
+      capacity: "Open to all students",
+      color: "bg-bacsa-mountain-meadow/10 text-bacsa-mountain-meadow border-bacsa-mountain-meadow/20",
+    },
+    {
+      title: "Research Conference",
+      date: "Saturday, March 21, 2026",
+      time: "TBD",
+      location: "TBD",
+      description:
+        "Showcase and celebrate student research in biotechnology and applied sciences. Present your work, hear from peers, and engage with faculty mentors at this annual research conference.",
+      type: "Conference",
+      capacity: "Open to all students",
       color: "bg-bacsa-royal-blue/10 text-bacsa-royal-blue border-bacsa-royal-blue/20",
     },
   ]

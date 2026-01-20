@@ -96,11 +96,12 @@ export function Navigation() {
                 Events
               </Link>
               <Link
-              href="/magazine"
-              className="text-gray-700 hover:text-bacsa-mountain-meadow transition-colors duration-200 font-medium text-base brand-body"
-            >
-              Magazine
-            </Link>
+                href="/magazine"
+                className="block px-3 py-2 text-gray-700 hover:text-bacsa-mountain-meadow hover:bg-gray-50 transition-colors duration-200 font-medium brand-body"
+                onClick={() => setIsOpen(false)}
+              >
+                Magazine
+              </Link>
               <Link
                 href="/contact"
                 className="block px-3 py-2 text-gray-700 hover:text-bacsa-mountain-meadow hover:bg-gray-50 transition-colors duration-200 font-medium brand-body"
