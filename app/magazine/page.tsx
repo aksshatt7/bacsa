@@ -7,7 +7,7 @@ const editions: MagazineEdition[] = [
     description:
       "BACSA Research Projects 2024-2025",
     coverSrc: "/magazine-covers/omnibusbacsa.png",
-    pdfHref: "/magazines/omnibus.pdf",
+    pdfHref: "/magazines/bacsa-journal.pdf",
   },
 ];
 
