@@ -1,6 +1,6 @@
 {
   "/page": "app/page.js",
-  "/magazine/page": "app/magazine/page.js",
-  "/events/page": "app/events/page.js",
-  "/about/page": "app/about/page.js"
+  "/bacsahacks/page": "app/bacsahacks/page.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/icon.png/route": "app/icon.png/route.js"
 }

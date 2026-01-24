@@ -61,6 +61,14 @@ export function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link
+                  href="/bacsahacks"
+                  className="brand-body text-gray-300 hover:text-bacsa-mountain-meadow transition-colors"
+                >
+                  BACSAHACKS
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/about"
                   className="brand-body text-gray-300 hover:text-bacsa-mountain-meadow transition-colors"
                 >
