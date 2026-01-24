@@ -1,6 +1,0 @@
-{
-  "/page": "app/page.js",
-  "/bacsahacks/page": "app/bacsahacks/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/icon.png/route": "app/icon.png/route.js"
-}
