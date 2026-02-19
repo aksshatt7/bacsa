@@ -35,7 +35,7 @@ export function Navigation() {
               href="/bacsahacks"
               className="text-gray-700 hover:text-bacsa-mountain-meadow transition-colors duration-200 font-medium text-base brand-body"
             >
-              BACSAHacks
+              BACSA Hacks
             </Link>
             <Link
               href="/about"
@@ -92,7 +92,7 @@ export function Navigation() {
                 className="block px-3 py-2 text-gray-700 hover:text-bacsa-mountain-meadow hover:bg-gray-50 transition-colors duration-200 font-medium brand-body"
                 onClick={() => setIsOpen(false)}
               >
-                BACSAHacks
+                BACSA Hacks
               </Link>
               <Link
                 href="/about"

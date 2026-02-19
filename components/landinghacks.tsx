@@ -12,7 +12,7 @@ type LandingHacksProps = {
 };
 
 export default function LandingHacks({
-  title = "BACSAHacks",
+  title = "BACSA Hacks",
   dateLabel = "Date",
   ctaText = "Sign up",
   ctaHref = "/events",
@@ -26,7 +26,7 @@ export default function LandingHacks({
       <div className="relative h-screen w-full overflow-hidden">
         <Image
           src={imageSrc}
-          alt="BACSAHacks hero background"
+          alt="BACSA Hacks hero background"
           fill
           priority
           sizes="100vw"
