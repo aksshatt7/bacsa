@@ -15,7 +15,7 @@ const AccordionTrigger = ({
   <AccordionPrimitive.Header className="flex">
     <AccordionPrimitive.Trigger
       className={cn(
-        "flex w-full items-center justify-between rounded-full bg-white/30 px-6 py-5 text-left transition-all hover:bg-white/40 border border-white/30 data-[state=open]:bg-white/40 [&[data-state=open]_svg]:rotate-45",
+        "flex w-full items-center justify-between rounded-2xl sm:rounded-full bg-white/30 px-4 sm:px-6 py-4 sm:py-5 text-left transition-all hover:bg-white/40 border border-white/30 data-[state=open]:bg-white/40 [&[data-state=open]_svg]:rotate-45",
         className
       )}
       {...props}
@@ -121,7 +121,7 @@ export default function FaqSection() {
     >
       <div className="mx-auto max-w-[1000px] px-6">
         {/* Heading */}
-        <h2 className="text-center text-[48px] font-extrabold tracking-tight text-slate-900 md:text-[64px]">
+        <h2 className="text-center text-[36px] sm:text-[48px] md:text-[64px] font-extrabold tracking-tight text-slate-900">
           FAQ
         </h2>
 
@@ -135,17 +135,17 @@ export default function FaqSection() {
                 className="border-none"
               >
                 <AccordionTrigger>
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/50 transition-colors [&[data-state=open]]:bg-white/70">
-                      <Plus className="h-4 w-4 text-slate-900 transition-transform duration-200" />
+                  <div className="flex items-center gap-3 sm:gap-4">
+                    <div className="flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-full bg-white/50 transition-colors [&[data-state=open]]:bg-white/70">
+                      <Plus className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-slate-900 transition-transform duration-200" />
                     </div>
-                    <span className="text-lg font-semibold text-slate-900 md:text-xl">
+                    <span className="text-base sm:text-lg md:text-xl font-semibold text-slate-900">
                       {faq.question}
                     </span>
                   </div>
                 </AccordionTrigger>
                 <AccordionContent>
-                  <p className="ml-12 text-base leading-relaxed text-slate-800 md:text-lg">
+                  <p className="ml-10 sm:ml-12 text-sm sm:text-base md:text-lg leading-relaxed text-slate-800">
                     {faq.answer}
                   </p>
                 </AccordionContent>
