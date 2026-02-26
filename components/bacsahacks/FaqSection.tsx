@@ -113,45 +113,52 @@ const faqData = [
   },
 ]
 
+function FaqColumn({ items }: { items: typeof faqData }) {
+  return (
+    <Accordion type="single" collapsible className="w-full space-y-4">
+      {items.map((faq) => (
+        <AccordionItem key={faq.id} value={faq.id} className="border-none">
+          <AccordionTrigger>
+            <div className="flex items-center gap-3 sm:gap-4">
+              <div className="flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-full bg-white/50 transition-colors [&[data-state=open]]:bg-white/70">
+                <Plus className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-slate-900 transition-transform duration-200" />
+              </div>
+              <span className="text-base sm:text-lg font-semibold text-slate-900">
+                {faq.question}
+              </span>
+            </div>
+          </AccordionTrigger>
+          <AccordionContent>
+            <p className="ml-10 sm:ml-12 text-sm sm:text-base leading-relaxed text-slate-800">
+              {faq.answer}
+            </p>
+          </AccordionContent>
+        </AccordionItem>
+      ))}
+    </Accordion>
+  )
+}
+
 export default function FaqSection() {
+  const half = Math.ceil(faqData.length / 2)
+  const leftItems = faqData.slice(0, half)
+  const rightItems = faqData.slice(half)
+
   return (
     <section
       id="faq"
       className="relative w-full bg-gradient-to-b from-teal-100 via-teal-200 to-teal-300 py-20 md:py-32"
     >
-      <div className="mx-auto max-w-[1000px] px-6">
+      <div className="mx-auto max-w-6xl px-6">
         {/* Heading */}
         <h2 className="text-center text-[36px] sm:text-[48px] md:text-[64px] font-extrabold tracking-tight text-slate-900">
           FAQ
         </h2>
 
-        {/* Accordion */}
-        <div className="mt-12 space-y-4">
-          <Accordion type="single" collapsible className="w-full">
-            {faqData.map((faq) => (
-              <AccordionItem
-                key={faq.id}
-                value={faq.id}
-                className="border-none"
-              >
-                <AccordionTrigger>
-                  <div className="flex items-center gap-3 sm:gap-4">
-                    <div className="flex h-7 w-7 sm:h-8 sm:w-8 shrink-0 items-center justify-center rounded-full bg-white/50 transition-colors [&[data-state=open]]:bg-white/70">
-                      <Plus className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-slate-900 transition-transform duration-200" />
-                    </div>
-                    <span className="text-base sm:text-lg md:text-xl font-semibold text-slate-900">
-                      {faq.question}
-                    </span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent>
-                  <p className="ml-10 sm:ml-12 text-sm sm:text-base md:text-lg leading-relaxed text-slate-800">
-                    {faq.answer}
-                  </p>
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+        {/* Two-column accordion grid */}
+        <div className="mt-12 grid grid-cols-1 gap-4 lg:grid-cols-2 lg:gap-6">
+          <FaqColumn items={leftItems} />
+          <FaqColumn items={rightItems} />
         </div>
       </div>
     </section>
