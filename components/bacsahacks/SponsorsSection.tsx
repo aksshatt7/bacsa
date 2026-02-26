@@ -84,7 +84,7 @@ export default function SponsorsSection() {
 
       <div className="relative mx-auto max-w-[1000px] px-6">
         {/* Heading */}
-        <h2 className="text-center text-[48px] font-extrabold tracking-tight text-slate-900 md:text-[64px]">
+        <h2 className="text-center text-[36px] sm:text-[48px] md:text-[64px] font-extrabold tracking-tight text-slate-900">
           Sponsors
         </h2>
 
