@@ -1,5 +1,7 @@
 "use client"
 
+import Image from "next/image"
+
 // ============================================================================
 // SPONSOR LOGO DATA - ADD YOUR SPONSOR LOGOS HERE
 // ============================================================================
@@ -28,53 +30,49 @@
 // ]
 // ============================================================================
 
-const sponsors = [
-  // CENTRAL NODE - Add your main/platinum sponsor logo here
-  // Replace null with the path to your logo, e.g., "/sponsors/main-sponsor.png"
-  { id: "center", name: "Main Sponsor", logo: null, position: "center" as const },
-  
-  // SURROUNDING NODES - Add up to 6 sponsor logos here
-  // Replace null with paths to your logos, e.g., "/sponsors/sponsor1.png"
-  { id: "sponsor1", name: "Sponsor 1", logo: null, position: "surrounding" as const },
-  { id: "sponsor2", name: "Sponsor 2", logo: null, position: "surrounding" as const },
-  { id: "sponsor3", name: "Sponsor 3", logo: null, position: "surrounding" as const },
-  { id: "sponsor4", name: "Sponsor 4", logo: null, position: "surrounding" as const },
-  { id: "sponsor5", name: "Sponsor 5", logo: null, position: "surrounding" as const },
-  { id: "sponsor6", name: "Sponsor 6", logo: null, position: "surrounding" as const },
+// sponsors config (restore when using the SVG network graphic):
+// const sponsors = [
+//   { id: "center",   name: "Main Sponsor", logo: null, position: "center" as const },
+//   { id: "sponsor1", name: "Sponsor 1",    logo: null, position: "surrounding" as const },
+//   { id: "sponsor2", name: "Sponsor 2",    logo: null, position: "surrounding" as const },
+//   { id: "sponsor3", name: "Sponsor 3",    logo: null, position: "surrounding" as const },
+//   { id: "sponsor4", name: "Sponsor 4",    logo: null, position: "surrounding" as const },
+//   { id: "sponsor5", name: "Sponsor 5",    logo: null, position: "surrounding" as const },
+//   { id: "sponsor6", name: "Sponsor 6",    logo: null, position: "surrounding" as const },
+// ]
+
+// Active sponsors shown in the section
+const activeSponsors = [
+  {
+    id: "mlh",
+    name: "Major League Hacking",
+    logo: "/sponsors/mlh-logo.svg",
+    // Optional URL to link to
+    href: "https://mlh.io",
+  },
+  {
+    id: "gemini",
+    name: "Google Gemini",
+    logo: "/sponsors/gemini-logo.svg",
+    href: "https://gemini.google.com",
+  },
 ]
 
 // ============================================================================
-// CIRCLE POSITIONS - EDIT HERE TO CHANGE WHERE CIRCLES APPEAR
+// CIRCLE POSITIONS - used when the SVG network graphic below is uncommented
 // ============================================================================
-// This array controls the position of all circles in the network graphic.
-// 
-// To edit positions:
-//   - cx: horizontal position (0-400, where 200 is center)
-//   - cy: vertical position (0-300, where 150 is center)
-//   - r: radius of the circle (40 for center, 30 for surrounding)
-//   - id: unique identifier (don't change unless you know what you're doing)
-//
-// Current layout: Random/scattered positions for organic network look
-// SVG viewBox is 0 0 400 300, so keep coordinates within those bounds
-// ============================================================================
-const nodePositions = [
-  { id: "center", cx: 200, cy: 150, r: 40 }, // Central node (larger) - KEEP THIS CENTERED
-  
-  // Surrounding nodes - RANDOM/SCATTERED positions (edit these values to reposition)
-  // Make them more random by varying distances and angles from center
-  // Coordinates must be within SVG viewBox: x (0-400), y (0-300)
-  { id: "node1", cx: 75, cy: 55, r: 30 },    // Top-left - random position
-  { id: "node2", cx: 325, cy: 60, r: 30 },   // Top-right - random position
-  { id: "node3", cx: 55, cy: 155, r: 30 },   // Left - random position
-  { id: "node4", cx: 345, cy: 145, r: 30 },  // Right - random position
-  { id: "node5", cx: 110, cy: 240, r: 30 },  // Bottom-left - random position
-  { id: "node6", cx: 290, cy: 250, r: 30 },  // Bottom-right - random position
-]
+// nodePositions config (restore when uncommenting the SVG network graphic):
+// [
+//   { id: "center", cx: 200, cy: 150, r: 40 },
+//   { id: "node1", cx: 75,  cy: 55,  r: 30 },
+//   { id: "node2", cx: 325, cy: 60,  r: 30 },
+//   { id: "node3", cx: 55,  cy: 155, r: 30 },
+//   { id: "node4", cx: 345, cy: 145, r: 30 },
+//   { id: "node5", cx: 110, cy: 240, r: 30 },
+//   { id: "node6", cx: 290, cy: 250, r: 30 },
+// ]
 
 export default function SponsorsSection() {
-  // Get sponsor for each position
-  const centerSponsor = sponsors.find((s) => s.position === "center")
-  const surroundingSponsors = sponsors.filter((s) => s.position === "surrounding")
 
   return (
     <section id="sponsors" className="relative w-full bg-white py-20 md:py-32">
@@ -211,13 +209,28 @@ export default function SponsorsSection() {
         </div>
         */}
 
-        {/* Coming Soon Placeholder */}
-        <div className="mt-12 flex justify-center">
-          <div className="rounded-full bg-teal-100 px-12 py-6">
-            <p className="text-center text-2xl font-semibold text-teal-700 md:text-3xl">
-              Coming Soon
-            </p>
-          </div>
+        {/* Sponsor logo cards */}
+        <div className="mt-14 flex flex-col items-center gap-6 sm:flex-row sm:justify-center sm:gap-10">
+          {activeSponsors.map((sponsor) => (
+            <a
+              key={sponsor.id}
+              href={sponsor.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex flex-col items-center gap-4 rounded-2xl border border-gray-100 bg-white px-10 py-8 shadow-md transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <div className="flex h-20 w-48 items-center justify-center">
+                <Image
+                  src={sponsor.logo}
+                  alt={sponsor.name}
+                  width={192}
+                  height={80}
+                  className="h-full w-full object-contain"
+                />
+              </div>
+              <span className="text-sm font-semibold text-slate-500">{sponsor.name}</span>
+            </a>
+          ))}
         </div>
       </div>
     </section>
