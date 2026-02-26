@@ -12,7 +12,7 @@ type LandingHacksProps = {
 };
 
 export default function LandingHacks({
-  title = "BACSAHacks",
+  title = "BACSA Hacks",
   dateLabel = "Date",
   ctaText = "Sign up",
   ctaHref = "/events",
