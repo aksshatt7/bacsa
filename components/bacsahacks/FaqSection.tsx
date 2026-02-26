@@ -55,7 +55,7 @@ const faqData = [
     id: "where-when",
     question: "Where and when will it be held?",
     answer:
-      "BACSA Hacks is happening on the 7th March 2025 and will be held at the University of Toronto Scarborough Campus in the Sam Ibrahim building.",
+      "BACSA Hacks is happening on the 7th March and will be held at the University of Toronto Scarborough Campus at the Instructional Centre. Registration begins at 8:30 am at IC-200.",
   },
   {
     id: "duration",
@@ -73,7 +73,7 @@ const faqData = [
     id: "team-size",
     question: "How many people can I have in my team?",
     answer:
-      "Teams will be limited to a maximum number of 6 members.",
+      "Teams will be limited to a maximum number of 4 members.",
   },
   {
     id: "find-team",
