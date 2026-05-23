@@ -1,0 +1,87 @@
+<svg width="1200" height="800" viewBox="0 0 1200 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="800" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#1E245C" />
+      <stop offset="1" stop-color="#0F1442" />
+    </linearGradient>
+    <linearGradient id="teal" x1="0" y1="0" x2="1" y2="0">
+      <stop stop-color="#15C5B9" />
+      <stop offset="1" stop-color="#10B7A9" />
+    </linearGradient>
+    <linearGradient id="dnaGlow" x1="0" y1="0" x2="0" y2="1">
+      <stop stop-color="#EAF3FF" />
+      <stop offset="1" stop-color="#98C7FF" />
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.35 0" result="glow" />
+      <feBlend in="SourceGraphic" in2="glow" mode="screen" />
+    </filter>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bg)" />
+
+  <rect x="60" y="56" width="388" height="6" rx="3" fill="#FFFFFF" />
+  <rect x="464" y="56" width="341" height="6" rx="3" fill="url(#teal)" />
+  <rect x="60" y="736" width="150" height="6" rx="3" fill="url(#teal)" />
+  <rect x="232" y="736" width="368" height="6" rx="3" fill="#FFFFFF" />
+
+  <rect x="60" y="44" width="8" height="34" rx="4" fill="#FFFFFF" />
+  <rect x="440" y="44" width="8" height="34" rx="4" fill="#FFFFFF" />
+  <rect x="232" y="724" width="8" height="34" rx="4" fill="#FFFFFF" />
+
+  <text x="60" y="198" fill="url(#teal)" font-family="Arial, Helvetica, sans-serif" font-size="108" font-weight="700" letter-spacing="-2">BACSA</text>
+  <text x="60" y="346" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="118" font-weight="800" letter-spacing="-3">RESEARCH</text>
+  <text x="60" y="497" fill="url(#teal)" font-family="Arial, Helvetica, sans-serif" font-size="110" font-weight="700" letter-spacing="-2">MAGAZINE</text>
+  <text x="60" y="648" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="112" font-weight="800" letter-spacing="-2">2026</text>
+
+  <g filter="url(#softGlow)">
+    <path d="M982 86C930 134 892 187 875 245C853 320 859 380 872 436C885 491 893 543 879 589C863 640 840 674 818 714" stroke="url(#dnaGlow)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" opacity="0.95" />
+    <path d="M1104 44C1068 98 1041 146 1023 197C1000 258 996 315 1007 371C1018 427 1033 477 1037 532C1041 585 1030 633 1005 686C988 719 961 747 943 772" stroke="url(#dnaGlow)" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" opacity="0.95" />
+
+    <g stroke-linecap="round">
+      <line x1="1000" y1="95" x2="1086" y2="53" stroke="#B9E0FF" stroke-width="8" />
+      <line x1="978" y1="146" x2="1060" y2="111" stroke="#B9E0FF" stroke-width="8" />
+      <line x1="956" y1="196" x2="1040" y2="166" stroke="#B9E0FF" stroke-width="8" />
+      <line x1="936" y1="246" x2="1028" y2="225" stroke="#B9E0FF" stroke-width="8" />
+      <line x1="925" y1="300" x2="1020" y2="292" stroke="#B9E0FF" stroke-width="8" />
+      <line x1="924" y1="354" x2="1020" y2="356" stroke="#B9E0FF" stroke-width="8" />
+      <line x1="932" y1="408" x2="1028" y2="422" stroke="#B9E0FF" stroke-width="8" />
+      <line x1="944" y1="462" x2="1042" y2="486" stroke="#B9E0FF" stroke-width="8" />
+      <line x1="947" y1="517" x2="1040" y2="549" stroke="#B9E0FF" stroke-width="8" />
+      <line x1="936" y1="570" x2="1027" y2="612" stroke="#B9E0FF" stroke-width="8" />
+      <line x1="916" y1="620" x2="1000" y2="670" stroke="#B9E0FF" stroke-width="8" />
+      <line x1="884" y1="665" x2="960" y2="728" stroke="#B9E0FF" stroke-width="8" />
+
+      <circle cx="1000" cy="95" r="14" fill="#EAF3FF" />
+      <circle cx="1086" cy="53" r="14" fill="#D2E7FF" />
+      <circle cx="978" cy="146" r="14" fill="#DDEAFF" />
+      <circle cx="1060" cy="111" r="14" fill="#C6DDFF" />
+      <circle cx="956" cy="196" r="14" fill="#EAF3FF" />
+      <circle cx="1040" cy="166" r="14" fill="#D2E7FF" />
+      <circle cx="936" cy="246" r="14" fill="#DDEAFF" />
+      <circle cx="1028" cy="225" r="14" fill="#C6DDFF" />
+      <circle cx="925" cy="300" r="14" fill="#EAF3FF" />
+      <circle cx="1020" cy="292" r="14" fill="#D2E7FF" />
+      <circle cx="924" cy="354" r="14" fill="#DDEAFF" />
+      <circle cx="1020" cy="356" r="14" fill="#C6DDFF" />
+      <circle cx="932" cy="408" r="14" fill="#EAF3FF" />
+      <circle cx="1028" cy="422" r="14" fill="#D2E7FF" />
+      <circle cx="944" cy="462" r="14" fill="#DDEAFF" />
+      <circle cx="1042" cy="486" r="14" fill="#C6DDFF" />
+      <circle cx="947" cy="517" r="14" fill="#EAF3FF" />
+      <circle cx="1040" cy="549" r="14" fill="#D2E7FF" />
+      <circle cx="936" cy="570" r="14" fill="#DDEAFF" />
+      <circle cx="1027" cy="612" r="14" fill="#C6DDFF" />
+      <circle cx="916" cy="620" r="14" fill="#EAF3FF" />
+      <circle cx="1000" cy="670" r="14" fill="#D2E7FF" />
+      <circle cx="884" cy="665" r="14" fill="#DDEAFF" />
+      <circle cx="960" cy="728" r="14" fill="#C6DDFF" />
+    </g>
+
+    <circle cx="1048" cy="154" r="8" fill="#7DD8FF" opacity="0.85" />
+    <circle cx="992" cy="331" r="7" fill="#7DD8FF" opacity="0.8" />
+    <circle cx="984" cy="570" r="8" fill="#7DD8FF" opacity="0.85" />
+    <circle cx="927" cy="700" r="8" fill="#7DD8FF" opacity="0.85" />
+  </g>
+</svg>
