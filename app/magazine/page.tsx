@@ -7,7 +7,14 @@ const editions: MagazineEdition[] = [
     description:
       "BACSA Research Projects 2024-2025",
     coverSrc: "/magazine-covers/omnibusbacsa.png",
-    pdfHref: "https://blobs.vusercontent.net/blob/BACSA%20Journal-6FGY5BGs7p6vru3PMTcN5wQnbzcWB1.pdf",
+    pdfHref: "/magazines/omnibus.pdf",
+  },
+  {
+    title: "BACSA Research Project Magazine 2026",
+    description:
+      "Student research from the 2025-2026 BACSA Research Project",
+    coverSrc: "/magazine-covers/bacsa-research-project-magazine-2026.svg",
+    pdfHref: "/magazines/bacsa-research-project-magazine-2026.pdf",
   },
 ];
 
